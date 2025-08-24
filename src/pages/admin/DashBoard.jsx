@@ -1,13 +1,11 @@
-import React from 'react'
-import AdminLayout from '../../component/layout/AdminLayout'
-import { Box, Container, Paper, Skeleton, Stack, Typography } from '@mui/material'
-import { AdminPanelSettings as AdminPanelSettingsIcon , Group as GroupIcon, Message as MessageIcon, Notifications as NotificationsIcon, Person as PersonIcon } from '@mui/icons-material'
-import moment from "moment"
-import { CurveButton, SearchField } from '../../component/styles/StyledComponent'
-import { DoughnutChart, LineChart } from '../../component/specific/Charts'
 import { useFetchData } from '6pp'
+import { AdminPanelSettings as AdminPanelSettingsIcon, Group as GroupIcon, Message as MessageIcon, Notifications as NotificationsIcon, Person as PersonIcon } from '@mui/icons-material'
+import { Box, Container, Paper, Skeleton, Stack, Typography } from '@mui/material'
+import moment from "moment"
+import AdminLayout from '../../component/layout/AdminLayout'
+import { DoughnutChart, LineChart } from '../../component/specific/Charts'
+import { CurveButton, SearchField } from '../../component/styles/StyledComponent'
 import { server } from '../../constants/config'
-import { LayoutLoader } from '../../component/layout/Loaders'
 import { useErrors } from '../../hooks/hook'
 
 
@@ -98,7 +96,7 @@ sx={{gap:"2rem"}}
     sx={{
         padding:"1rem",
         borderRadius:"1rem",
-        width:"100%",
+       
         maxWidth:"25rem",
         display:"flex",
         justifyContent:"center",
