@@ -1,18 +1,17 @@
-import { Add as AddIcon, Delete as DeleteIcon, Done as DoneIcon, Edit as EditIcon, KeyboardBackspace as KeyboardBackspaceIcon ,Menu as MenuIcon} from '@mui/icons-material';
-import {  Backdrop, Box, Button, CircularProgress, Drawer, Grid, IconButton,  Stack,  TextField,  Tooltip, Typography } from '@mui/material'
+import { Add as AddIcon, Delete as DeleteIcon, Done as DoneIcon, Edit as EditIcon, KeyboardBackspace as KeyboardBackspaceIcon, Menu as MenuIcon } from '@mui/icons-material';
+import { Backdrop, Box, Button, CircularProgress, Drawer, Grid, IconButton, Stack, TextField, Tooltip, Typography } from '@mui/material';
 import { memo, Suspense, useEffect, useState } from 'react';
-import { useNavigate,useSearchParams } from 'react-router-dom';
-import { Link } from '../component/styles/StyledComponent';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import AvatarCard from '../component/shared/AvatarCard';
-import {samplechats, sampleUsers} from "../constants/sampleData"
+import { Link } from '../component/styles/StyledComponent';
 
 import { lazy } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { LayoutLoader } from '../component/layout/Loaders';
 import UserItem from '../component/shared/UserItem';
 import { bgGradient } from '../constants/color';
-import { useAddGroupMemberMutation, useChatDetailsQuery, useDeleteChatMutation, useMyGroupsQuery, useRemoveGroupMemberMutation, useRenameGroupMutation } from '../redux/api/api';
 import { useAsyncMutation, useErrors } from '../hooks/hook';
-import { LayoutLoader } from '../component/layout/Loaders';
-import { useDispatch, useSelector } from 'react-redux';
+import { useChatDetailsQuery, useDeleteChatMutation, useMyGroupsQuery, useRemoveGroupMemberMutation, useRenameGroupMutation } from '../redux/api/api';
 import { setIsAddMember } from '../redux/reducer/misc';
 const AddMemberDialog=lazy(()=>import ("../component/dialogs/AddMemberDialog"))
 const ConfirmDeleteDialog=lazy(()=>import ("../component/dialogs/ConfirmDeleteDialog"))
